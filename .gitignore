@@ -1,0 +1,7 @@
+.worktrees/
+.opencode/dejavu/
+.superpowers/
+node_modules/
+dist/
+coverage/
+*.log

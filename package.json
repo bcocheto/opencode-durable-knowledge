@@ -1,0 +1,55 @@
+{
+  "name": "opencode-durable-knowledge",
+  "version": "0.1.0",
+  "description": "OpenCode V2 plugin for verifiable durable knowledge backed by external Obsidian policy scripts.",
+  "license": "MIT",
+  "author": "bcocheto",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bcocheto/opencode-durable-knowledge.git"
+  },
+  "bugs": {
+    "url": "https://github.com/bcocheto/opencode-durable-knowledge/issues"
+  },
+  "homepage": "https://github.com/bcocheto/opencode-durable-knowledge#readme",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "obsidian",
+    "durable-memory",
+    "knowledge-management"
+  ],
+  "type": "module",
+  "main": "./index.js",
+  "exports": "./index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "index.js",
+    "dist",
+    "README.md",
+    "LICENSE",
+    "docs/PYTHON_POLICY_CONTRACT.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "install:global": "node scripts/install.mjs",
+    "prepack": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test",
+    "verify:release": "node scripts/verify-release.mjs"
+  },
+  "dependencies": {
+    "@opencode/plugin": "2.0.19"
+  },
+  "devDependencies": {
+    "@types/node": "24.5.2",
+    "tsx": "4.20.6",
+    "typescript": "5.9.2"
+  }
+}
